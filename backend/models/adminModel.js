@@ -11,11 +11,10 @@ const adminSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-  },
-  date: {
-    type: Date,
-    default: Date("<YYYY-mm-dd>"),
-  },
+  }
+},
+{
+  timestamps:true
 });
 
 //static signup method

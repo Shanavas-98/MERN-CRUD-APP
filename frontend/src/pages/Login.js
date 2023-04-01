@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { useLogin } from "../hooks/useLogin";
 
 const UserLogin = ()=>{
@@ -24,7 +25,13 @@ const UserLogin = ()=>{
             value={password}
             onChange={(e)=>setPassword(e.target.value)}
             />
-            <button disabled={isLoading}>Login</button>
+            <button>{isLoading?(<Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />): "Login"}</button>
             {error && <div className="error">{error}</div>}
         </form>
     )

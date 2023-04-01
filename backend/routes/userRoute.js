@@ -1,6 +1,7 @@
-const {userAuth} = require('../middlewares/Auth')
+const express = require('express');
 const router = express.Router();
-
+const {userLogin,userSignup,userProfile}= require('../controllers/userController');
+const {userAuth} = require('../middlewares/Auth');
 
 
 //login route

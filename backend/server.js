@@ -3,6 +3,7 @@ const logger = require('morgan');
 const connectDB = require("./config/db");
 const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
+const workoutRoute = require("./routes/workoutRoute");
 
 const app = express();
 require('dotenv').config();
@@ -15,5 +16,6 @@ app.use(logger('dev'));
 //routes
 app.use('/api/user',userRoute);
 app.use('/api/admin',adminRoute);
+app.use('/api/workouts', workoutRoute);
 
 app.listen(process.env.PORT,console.log(`Server started on ${process.env.PORT}`));
